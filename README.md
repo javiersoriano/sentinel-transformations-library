@@ -1,4 +1,4 @@
-# sentinel-CLv2-kit
+# Microsoft Sentinel Transformations Library
 
 This repository contains samples for multiple scenarios that are possible thanks to the new Log Analytics Custom Logs v2 and pipeline transformation features.
 
