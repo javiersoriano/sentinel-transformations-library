@@ -23,5 +23,11 @@ Ingestion time transformation allows you to drop specific fields from events or 
 2. Removing email addresses
 3. Masking credit card information
 
+### Logstash
+
+Among other enhancements, the new custom logs API allows you to ingest custom data into some Microsoft tables: SecurityEvent, WindowsEvent, CommonSecurityLog and Syslog. We have also updated the Microsoft Sentinel Logastash plugin to work with the new API.
+
+1. Perform log aggregation with Logastsh and then ingest into Syslog table
+
 ### Row level RBAC
 
