@@ -2,7 +2,7 @@
 
 Filtering incoming logs is essential to avoid noise in our telemetry and to keep ingestion costs under control.
 
-In this folder we have two examples on how to achieve filtering: dropping fields or entire rows.
+In this folder we have two examples on how to achieve filtering: dropping fields (FilteringFieldsDCR.json) or entire rows (FilteringRowsDCR.json).
 
 ## Dropping fields
 

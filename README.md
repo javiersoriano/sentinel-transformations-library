@@ -12,9 +12,8 @@ Ingestion time transformation allows you to drop specific fields from events or 
 
 ### Enrichment/Tagging
 
-1. Adding a value from an existing event by extending a JSON column 
+1. Enriching an event or a field in the event with additional meaningful information
 2. Translating a value into a customer’s business related value (Geo, Departments,…)
-3. Enriching an event or a field in the event with additional meaningful information
 
 
 ### PII Masking/Obfuscation
