@@ -7,7 +7,7 @@ This repository contains samples for multiple scenarios that are possible thanks
 Ingestion time transformation allows you to drop specific fields from events or even full evets that you don't need to have in the workspace.
 
 1. Dropping fields
-2. Dorpping entire records
+2. Dropping entire records
 3. Multiple workspaces for idependent entities
 
 ### Enrichment/Tagging
@@ -21,13 +21,9 @@ Ingestion time transformation allows you to drop specific fields from events or 
 
 1. Masking last 4 digits of SSN
 2. Removing email addresses
-3. Masking credit card information
 
 ### Logstash
 
 Among other enhancements, the new custom logs API allows you to ingest custom data into some Microsoft tables: SecurityEvent, WindowsEvent, CommonSecurityLog and Syslog. We have also updated the Microsoft Sentinel Logastash plugin to work with the new API.
 
 1. Perform log aggregation with Logastsh and then ingest into Syslog table
-
-### Row level RBAC
-
