@@ -29,7 +29,7 @@
         "endpointResourceId": {
             "type": "String",
             "metadata": {
-                "description": "Specifies the Azure resource ID of the Data Collection Endpoint to use."
+                "description": "Specifies the Azure resource ID of the Data Collection Endpoint to use."
             }
         }
     },
