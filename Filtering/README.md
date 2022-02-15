@@ -24,3 +24,19 @@ source | where Action contains 'REJECT'
 ```
 
 In this example we're using a table with firewall traffic information, where we just want to keep records where the action taken by the firewall was to reject the traffic. We use ```where``` clause to do that.
+
+## Multiple workspaces for idependent entities
+
+There are situations where you have multiple Sentinel workspaces, each owned by an independent entity. In those case, customers want each entity to see only its logs and not logs from other entities. This is ok for most data sources, but it can be a challenge for tenant-level sources like Office 365 or Azure AD.
+
+For these situations, you can multi-home the data source (eg. Office365) to send to multiple workspace, and then filter out at ingestion time the data that doesn't belong to the entity. For this to be done successfully, you need to have something in the event that can determine the owning entity, like a different domain or a country code.
+
+![image](../Media/AAD_multi-ws.png)
+
+In this case, you would need to apply a filtering trasnformation in the default DCR of all workspaces involved. Each transformation would look something like this (replacing country name):
+
+```kusto
+OfficeActivity | where OrganizationName == 'contoso-<country_name>.onmicrosoft.com'
+```
+
+This will of course vary for each implementation and data type, but this gives an idea on how to do it.
