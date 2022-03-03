@@ -75,7 +75,7 @@
                         "destinations": [
                             "clv2ws1"
                         ],
-                        "transformKql": "source | extend parsedSSN = split(SSN,'-') | extend SSN = iif(SSN matches regex @'^\\d{3}-\\d{2}-\\d{4}$' and not( SSN matches regex @'^(000|666|9)-\\d{2}-\\d{4}$') and not( SSN matches regex @'^\\d{3}-00-\\d{4}$') and not (SSN matches regex @'^\\d{3}-\\d{2}-0000$' ),strcat(parsedSSN[0],'-', parsedSSN[1],'-','XXXX'), 'Invalid SSN') | extend Email = iif(Email matches regex @'^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$','PII data removed', Email) |project-away parsedSSN | project TimeGenerated = Time, SSN, Email",
+                        "transformKql": "source | extend parsedSSN = split(SSN,'-') | extend SSN = iif(SSN matches regex @'^\\d{3}-\\d{2}-\\d{4}$' and not( SSN matches regex @'^(000|666|9)-\\d{2}-\\d{4}$') and not( SSN matches regex @'^\\d{3}-00-\\d{4}$') and not (SSN matches regex @'^\\d{3}-\\d{2}-0000$' ),strcat('XXX','-', 'XX','-',parsedSSN[2]), 'Invalid SSN') | extend Email = iif(Email matches regex @'^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$','PII data removed', Email) |project-away parsedSSN | project TimeGenerated = Time, SSN, Email",
                         "outputStream": "Custom-CustomerData_CL"
                     }
                 ]

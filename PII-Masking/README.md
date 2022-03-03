@@ -6,7 +6,7 @@ In the JSON file in this folder, you can find a Data Collection Rule that contai
 
 ## Masking last 4 digits of Social Security Number
 
-The first masking is done on a field called *SSN* which is supposed to contain a Social Security Number. The goal is to replace the last 4 numbers in the SSN with Xs, but only when the SSN is valid. If the SSN is invalid, then we should have an *Invalid SSN* message. This is the part of the transformation that does that:
+The first masking is done on a field called *SSN* which is supposed to contain a Social Security Number. The goal is to replace the first 5 numbers in the SSN with Xs, but only when the SSN is valid. If the SSN is invalid, then we should have an *Invalid SSN* message. This is the part of the transformation that does that:
 
 ```kusto
 source 
@@ -14,10 +14,10 @@ source
 | extend SSN = iif(SSN matches regex @'^\\d{3}-\\d{2}-\\d{4}$' 
 and not( SSN matches regex @'^(000|666|9)-\\d{2}-\\d{4}$') 
 and not( SSN matches regex @'^\\d{3}-00-\\d{4}$') 
-and not (SSN matches regex @'^\\d{3}-\\d{2}-0000$' ),strcat(parsedSSN[0],'-', parsedSSN[1],'-','XXXX'), 'Invalid SSN') 
+and not (SSN matches regex @'^\\d{3}-\\d{2}-0000$' ),strcat('XXX','-', 'XX','-',parsedSSN[2]), 'Invalid SSN') 
 ```
 
-As you can see, first we use ```split``` to separate the SSN field using ```-``` as a separator and we store it in a temporary field. We then use ```iif``` to do the replacement, only if the field matches a valid SSN. Inside the ```iif```, we use ```matches regex``` to find the pattern of a Social Security Number (including exclusions). If the SSN is valid, we use ```strcat``` to keep the first two parts and replace the last part with XXXX. If it's not valid, we replace with *Invalid SSN*. Finally, we remove the intermediary field.
+As you can see, first we use ```split``` to separate the SSN field using ```-``` as a separator and we store it in a temporary field. We then use ```iif``` to do the replacement, only if the field matches a valid SSN. Inside the ```iif```, we use ```matches regex``` to find the pattern of a Social Security Number (including exclusions). If the SSN is valid, we use ```strcat``` to leave the last 4 digits but replace the first 5 digits with Xs. If it's not valid, we replace with *Invalid SSN*. Finally, we remove the intermediary field.
 
 ## Removing Personal Identifiable Information
 
