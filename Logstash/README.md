@@ -39,3 +39,5 @@ We will focus on two sections of the LogstashDCR.json file: *streamDeclarations*
 In *streamDeclarations* we define which fields will be ingested. The names are important as these must be the same used in the logstash file.
 
 In *dataFlows* we use the *transformKql* property to assign the fields to the proper field names. Specially important is the *outputStream* property, which points to the target table. If the table schema is defined by Microsoft, it will start with ```Microsoft-``` followed by the table name, in our case *Syslog*.
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FLogstash%2FLogstashDCR.json)

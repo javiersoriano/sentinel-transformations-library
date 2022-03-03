@@ -24,3 +24,5 @@ source
 ```
 
 As you can see, we start by creating a collection of JSON key value pairs, which we then use to populate the division custom field. The rest of the custom fields are extracted from an existing JSON field in the original record. This will avoid additional effort when querying these logs as part of investigations.
+
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FTagging%2FEnrichmentDCR.json)
