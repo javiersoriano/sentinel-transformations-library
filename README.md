@@ -22,8 +22,8 @@ Adding additional context to an event can greatly help analysts in their scoping
 
 Another scenario is obfuscation or masking of PII information. This can be Social Security Numbers, email addresses, phone numbers, etc.
 
-1. [Masking last 4 digits of SSN](./PII-Masking#masking-last-4-digits-of-social-security-number)
-2. [Removing email addresses](./PII-Masking#removing-personal-identifiable-information)
+1. [Masking last 4 digits of SSN](./Masking#masking-last-4-digits-of-social-security-number)
+2. [Removing email addresses](./Masking#removing-personal-identifiable-information)
 
 ### Logstash
 

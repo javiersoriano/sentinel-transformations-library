@@ -15,7 +15,7 @@ source
 
 Just using ```project-away``` will avoid ingesting the specified fields into the workspace. Take into account that the column will not disappear, but field will be empty, avoiding the ingestion cost.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FFiltering%2FFilteringFieldsDCR.json)
+[![Deploy this DCR to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FFiltering%2FFilteringFieldsDCR.json)
 
 ## Dropping rows
 
@@ -27,7 +27,7 @@ source | where Action contains 'REJECT'
 
 In this example we're using a table with firewall traffic information, where we just want to keep records where the action taken by the firewall was to reject the traffic. We use ```where``` clause to do that.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FFiltering%2FFilteringRowsDCR.json)
+[![Deploy this DCR to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FFiltering%2FFilteringRowsDCR.json)
 
 ## Multiple workspaces for idependent entities
 
