@@ -14,6 +14,7 @@ source
 As you can see, we check if the first octet in the source IP address is greated than 100, in which case we tag it as internal.
 
 Deploy this DCR:
+
 [![Deploy this DCR to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FTagging%2FEnrichmentDCR.json)
 
 ## Translating a value into a customer’s business related value

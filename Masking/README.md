@@ -31,4 +31,5 @@ source
 This one is easier, because we want to replace the whole field if it matches the regex, if not, we leave the field content as is.
 
 Deploy this DCR (includes both SSN and email maskings):
+
 [![Deploy this DCR to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjaviersoriano%2Fsentinel-transformations-library%2Fmain%2FMasking%2FMaskingDCR.json)
